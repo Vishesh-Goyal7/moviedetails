@@ -1,0 +1,199 @@
+/* HomeScreen.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevents scrollbars */
+  }
+  
+  .home-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: #141414; /* Dark background similar to Netflix */
+    color: #fff;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .movie-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    align-items: center; /* Center items vertically */
+    height: calc(100vh - 60px); /* Adjust height considering title */
+    width: 100vw; /* Full viewport width */
+    padding: 0 20px; /* Horizontal padding */
+    box-sizing: border-box;
+    scroll-snap-type: x mandatory; /* Snap scrolling */
+    transition: transform 0.3s ease; /* Smooth transform transition */
+  }
+  
+  .movie-card {
+    background-color: #333; /* Slightly lighter background for movie cards */
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(50vw - 20px); /* 50% of the viewport width minus space for gap */
+    max-width: 300px; /* Optional: set a maximum width for each card */
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow transition */
+    flex: 0 0 auto; /* Prevent flex item from shrinking or growing */
+    margin-right: 20px; /* Space between cards */
+    scroll-snap-align: start; /* Snap alignment */
+  }
+  
+  .movie-card.expanded {
+    width: 90vw; /* Expand card to cover most of the viewport */
+    height: 90vh; /* Expand card height to cover most of the viewport */
+    z-index: 10; /* Ensure expanded card is on top */
+    position: fixed; /* Fixed position for expanded view */
+    top: 5vh; /* Center vertically with some margin */
+    left: 5vw; /* Center horizontally with some margin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Mild shadow effect */
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .movie-thumbnail {
+    width: 100%;
+    object-fit: cover; /* Ensure the image covers the thumbnail */
+  }
+  
+  .movie-info {
+    position: absolute;
+    bottom: -100px; /* Place info box below the card initially */
+    left: 0;
+    width: 100%; /* Full width of the movie card */
+    height: 100px; /* Height of the info box */
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8); /* Darker overlay for the movie info */
+    transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth fade-in/out and slide effect */
+    opacity: 0; /* Initially hidden */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  
+  .movie-card:hover .movie-info {
+    opacity: 1; /* Show movie info on hover */
+    bottom: -10px; /* Move the info box up to be visible */
+  }
+  
+  .movie-title {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .movie-summary {
+    font-size: 0.9rem;
+    color: #ccc;
+    overflow: hidden; /* Hide overflow to maintain layout */
+  }
+  
+  .movie-details-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20; /* Ensure overlay is above all other content */
+  }
+  
+  .movie-details {
+    background: #222;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow-y: auto; /* Scroll if content overflows */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .movie-details-thumbnail {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .movie-details-content {
+    color: #fff;
+  }
+  
+  .movie-details-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .movie-details-summary {
+    font-size: 1.2rem;
+  }
+  
+  .movie-details p {
+    margin: 5px 0;
+  }
+  
+  .movie-details a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  
+  .movie-details a:hover {
+    text-decoration: underline;
+  }
+  
+  .movie-summary, .movie-details-summary {
+    font-size: 0.9rem;
+    color: #ccc;
+    overflow: hidden; /* Hide overflow to maintain layout */
+    line-height: 1.5; /* Improve readability */
+  }
+  
+  .movie-summary p, .movie-details-summary p {
+    margin: 0; /* Remove default margins from paragraphs */
+  }
+
+  .movie-details-thumbnail {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  .movie-details-thumbnail {
+    width: 80%; /* Adjust the width as needed */
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+    max-width: 600px; /* Optional: set a maximum width for the image */
+  }
+  
+  .movie-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background for better contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Add shadow effect */
+  }
+  
+  .movie-details-content {
+    text-align: center;
+    color: #fff;
+  }

@@ -1,0 +1,97 @@
+/* SearchScreen.css */
+.search-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+    color: #fff;
+    overflow-y: auto;
+    z-index: 1000; /* Ensure it's on top */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 80%;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .search-bar button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #e50914; /* Netflix red */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #f40612; /* Darker red for hover */
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .search-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .search-thumbnail {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .search-info {
+    flex: 1;
+  }
+  
+  .search-title {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .search-summary {
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.5;
+  }
+  
